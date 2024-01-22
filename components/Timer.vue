@@ -23,7 +23,7 @@ export default {
     name: 'Timer',
     data() {
         return {
-            countDownToTime: new Date(2024, 0, 23, 0, 2).getTime(),
+            countDownToTime: new Date(2024, 8, 14, 15, 30).getTime(),
             time: {
                 days: 0,
                 hours: 0,
