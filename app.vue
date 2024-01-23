@@ -1,6 +1,7 @@
-
 <template>
-  <Header />
-  <Hero />
+  <Main />
   <NuxtPage />
 </template>
+<script setup>
+</script>
+<style scoped></style>

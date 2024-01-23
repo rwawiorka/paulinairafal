@@ -1,6 +1,7 @@
 <template>
     <div class="hero">
-        <NuxtImg class="hero-image max-h-screen w-screen min-h-screen" format="webp" src="/hands.jpg" alt="Hero Image" />
+        <NuxtImg v-auto-animate class="hero-image max-h-screen w-screen min-h-screen" format="webp" src="/hands.jpg"
+            alt="Hero Image" />
         <div class="hero-text w-full h-full">
             <blockquote class=" hero-slogan text-slate-200 text-center w-1/6 text-2xl">
                 <sub>
@@ -13,8 +14,9 @@
             </blockquote>
             <h1 class="hero-title text-8xl font-bold">{{ heroText }}</h1>
             <h2 class="hero-date text-slate-200 text-5xl">{{ heroDate }}</h2>
+            <h3 class="hero-upload text-slate-200 text-4xl">{{ heroUpload }}</h3>
+
         </div>
-        <Timer />
     </div>
 </template>
 
@@ -28,7 +30,8 @@ export default {
                 year: 'numeric',
                 month: 'numeric',
                 day: 'numeric',
-            })
+            }),
+            heroUpload: "Podziel się z nami swoimi zdjęciami z naszego ślubu!"
         }
     }
 }
@@ -47,7 +50,7 @@ export default {
 
     &-title {
         position: absolute;
-        top: 50%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: 'Dancing Script', cursive;
@@ -70,7 +73,15 @@ export default {
 
     &-date {
         position: absolute;
-        top: 60%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Lobster', cursive;
+    }
+
+    &-upload {
+        position: absolute;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: 'Lobster', cursive;
