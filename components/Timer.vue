@@ -1,6 +1,6 @@
 <template>
     <div class="timer">
-        <ul id="countdown"" class=" text-slate-20">
+        <ul id="countdown" class="text-slate-20">
             <li><span class="days timenumbers">{{ time.days }}</span>
                 <p class="timeRefDays timedescription">dni</p>
             </li>
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import party from 'party-js';
 export default {
     name: 'Timer',
     data() {
@@ -30,8 +29,6 @@ export default {
                 minutes: 0,
                 seconds: 0
             },
-            timeIsUp: false
-
         };
     },
     computed: {
@@ -66,16 +63,11 @@ export default {
             const minutes = Math.floor((timeDifference % millisecondsInOneHour) / millisecondsInOneMinute);
             const seconds = Math.floor((timeDifference % millisecondsInOneMinute) / millisecondsInOneSecond);
 
-            if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
-                this.timeIsUp = true;
-                this.startParty();
-            }
-            else {
-                this.time.days = days;
-                this.time.hours = hours;
-                this.time.minutes = minutes;
-                this.time.seconds = seconds;
-            }
+            this.timeIsUp = true;
+            this.time.days = days;
+            this.time.hours = hours;
+            this.time.minutes = minutes;
+            this.time.seconds = seconds;
         },
         startTimer: function () {
             setInterval(() => {
@@ -85,12 +77,6 @@ export default {
                 clearInterval(this.timer);
             }
         },
-        startParty: function () {
-            party.confetti(document.body, {
-                count: party.variation.range(20, 40),
-                size: party.variation.range(0.8, 1.2),
-            });
-        }
     },
 }
 </script>
