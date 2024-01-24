@@ -2,9 +2,11 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    "@nuxtjs/tailwindcss",
+    "@nuxt/ui",
     "@formkit/auto-animate",
     "@nuxt/image",
+    "unplugin-icons/nuxt",
+    // "@nuxt/ui",
     ["@nuxtjs/google-fonts", {
       families: {
         'Dancing Script': {
@@ -15,6 +17,7 @@ export default defineNuxtConfig({
           wght: [400]
         },
         Roboto: true,
+        Pacifico: true,
         Inter: [400, 700],
         'Josefin+Sans': true,
         Lato: [100, 300],
@@ -28,19 +31,9 @@ export default defineNuxtConfig({
         },
         DancingScript: true,
       }
-    }],
-    'nuxt-icon',
+    }]
   ],
   image: {
-    format: ['webp'],
-    screens: {
-      'xs': 320,
-      'sm': 640,
-      'md': 768,
-      'lg': 1024,
-      'xl': 1280,
-      'xxl': 1536,
-      '2xl': 1536
-    },
+    format: ['webp']
   },
 })
