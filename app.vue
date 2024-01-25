@@ -4,4 +4,8 @@
 </template>
 <script setup>
 </script>
-<style scoped></style>
+<style>
+::selection {
+  background-color: rgb(175, 149, 201) !important;
+}
+</style>

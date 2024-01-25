@@ -1,17 +1,37 @@
 <template>
-    <div class="timer">
-        <ul id="countdown" class="text-slate-20">
-            <li><span class="days timenumbers">{{ time.days }}</span>
-                <p class="timeRefDays timedescription">dni</p>
+    <div class="timer absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+        <ul id="countdown" class="flex justify-center items-center gap-20 text-slate-200">
+            <li>
+                <span class="days block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                    {{ time.days }}
+                </span>
+                <p class="timeRefDays text-xs all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
+                    {{ timeText.days }}
+                </p>
             </li>
-            <li><span class="hours timenumbers">{{ time.hours }}</span>
-                <p class="timeRefHours timedescription">godzin</p>
+            <li>
+                <span class="hours block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                    {{ time.hours }}
+                </span>
+                <p class="timeRefHours text-xs all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
+                    {{ timeText.hours }}
+                </p>
             </li>
-            <li><span class="minutes timenumbers">{{ time.minutes }}</span>
-                <p class="timeRefMinutes timedescription">minut</p>
+            <li>
+                <span class="minutes block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                    {{ time.minutes }}
+                </span>
+                <p class="timeRefMinutes text-xs all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
+                    {{ timeText.minutes }}
+                </p>
             </li>
-            <li><span class="seconds timenumbers yellow-text">{{ time.seconds }}</span>
-                <p class="timeRefSeconds timedescription">sekund</p>
+            <li>
+                <span class="seconds block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                    {{ time.seconds }}
+                </span>
+                <p class="timeRefSeconds text-xs all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
+                    {{ timeText.seconds }}
+                </p>
             </li>
         </ul>
     </div>
@@ -28,6 +48,12 @@ export default {
                 hours: 0,
                 minutes: 0,
                 seconds: 0
+            },
+            timeText: {
+                days: 'dni',
+                hours: 'godzin',
+                minutes: 'minut',
+                seconds: 'sekund'
             },
         };
     },
@@ -82,28 +108,7 @@ export default {
 </script>
 <style scoped>
 .timer {
-    position: absolute;
     top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99;
-}
-
-#countdown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    color: #FFF;
-}
-
-.timenumbers {
-    display: block;
-    font-size: 3rem;
-    font-weight: 400;
-    line-height: 3rem;
-    margin: 0 auto;
-    text-align: center;
 }
 
 .timedescription {
@@ -114,19 +119,5 @@ export default {
     text-align: center;
     position: relative;
     top: 0px;
-}
-
-.letthemlive {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99;
-    font-size: 3rem;
-    font-weight: 400;
-    line-height: 3rem;
-    margin: 0 auto;
-    text-align: center;
-    color: #FFF;
 }
 </style>
