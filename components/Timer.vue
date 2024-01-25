@@ -1,8 +1,8 @@
 <template>
     <div class="timer absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-        <ul id="countdown" class="flex justify-center items-center gap-20 text-slate-200">
+        <ul id="countdown" class="flex justify-center items-center gap-5 text-slate-100">
             <li>
-                <span class="days block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                <span class="days block text-4xl font-normal leading-none m-auto mt-0 mb-0 text-center">
                     {{ time.days }}
                 </span>
                 <p class="timeRefDays text-xs all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
@@ -10,7 +10,7 @@
                 </p>
             </li>
             <li>
-                <span class="hours block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                <span class="hours block text-4xl font-normal leading-none m-auto mt-0 mb-0 text-center">
                     {{ time.hours }}
                 </span>
                 <p class="timeRefHours text-xs all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
@@ -18,7 +18,7 @@
                 </p>
             </li>
             <li>
-                <span class="minutes block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                <span class="minutes block text-4xl font-normal leading-none m-auto mt-0 mb-0 text-center">
                     {{ time.minutes }}
                 </span>
                 <p class="timeRefMinutes text-xs all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
@@ -26,7 +26,7 @@
                 </p>
             </li>
             <li>
-                <span class="seconds block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                <span class="seconds block text-4xl font-normal leading-none m-auto mt-0 mb-0 text-center">
                     {{ time.seconds }}
                 </span>
                 <p class="timeRefSeconds text-xs all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">

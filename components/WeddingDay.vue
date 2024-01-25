@@ -1,6 +1,6 @@
 <template>
     <div class="hero">
         <HeroImage />
-        <HeroContent isWeddingDay="true" />
+        <HeroContent :isWeddingDay="true" />
     </div>
 </template>

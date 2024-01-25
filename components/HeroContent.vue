@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-full absolute top-0">
         <blockquote
-            class="hero-slogan text-slate-200 text-center w-1/6 text-2xl absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-cloud">
+            class="hero-slogan text-slate-200 text-center absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-cloud w-[calc(100%-10px)] text-xl top-[calc(10%)]">
             <sub class="relative">
                 <FormatQuote class="absolute right-full bottom-0" />
             </sub>
@@ -10,17 +10,18 @@
                 <FormatQuote class="absolute left-full top-0 rotate-180" />
             </sup>
         </blockquote>
-        <h1 class="hero-title text-8xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-cloud primary-color wedding-text-shadow"
-            :class="{ 'hero-wedding-title': props.isWeddingDay }">
+
+        <h1 :class="{ 'hero-wedding-title': props.isWeddingDay, 'top-[calc(30%)]': props.isWeddingDay }"
+            class="hero-title font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-cloud primary-color wedding-text-shadow text-center text-6xl">
             {{ heroData.text }}
         </h1>
-        <h2 class="hero-date text-slate-200 text-5xl absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-alegreya"
-            :class="{ 'hero-wedding-date': props.isWeddingDay }">
+        <h2 :class="{ 'hero-wedding-date': props.isWeddingDay, 'top-[calc(45%)]': props.isWeddingDay, 'top-[calc(60%+1rem)]': !props.isWeddingDay }"
+            class="hero-date text-slate-100 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-alegreya text-4xl">
             {{ heroData.date }}
         </h2>
         <h3 v-if="props.isWeddingDay"
-            class="hero-upload text-slate-200 text-3xl absolute left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase w-1/4 text-center font-alegreya"
-            :class="{ 'hero-wedding-upload': props.isWeddingDay }">
+            :class="{ 'hero-wedding-upload': props.isWeddingDay, 'top-[calc(75%)]': props.isWeddingDay }"
+            class="hero-upload text-slate-100 text-xl absolute left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase w-[calc(100%-10px)] text-center font-alegreya">
             {{ heroData.upload }}
         </h3>
         <PhotoButton v-if="props.isWeddingDay" />
@@ -51,33 +52,3 @@ const props = defineProps({
 });
 
 </script>
-
-<style scoped lang="scss">
-.hero {
-    &-slogan {
-        top: 10%;
-    }
-
-    &-date {
-        top: 60%;
-    }
-
-    &-upload {
-        top: 80%;
-    }
-
-    &-wedding {
-        &-title {
-            top: 30%;
-        }
-
-        &-date {
-            top: 40%;
-        }
-
-        &-upload {
-            top: 70%;
-        }
-    }
-}
-</style>
