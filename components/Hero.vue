@@ -5,4 +5,5 @@
         <Timer />
         <Button text="Jak dojechać?" />
     </div>
+    <Maps />
 </template>
