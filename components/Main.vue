@@ -3,18 +3,14 @@
     <Hero v-else />
 </template>
 
-<script>
+<script setup lang="ts">
 const { countDown } = useCountDown();
-export default {
-    data() {
-        return {
-            weddingDay: false,
-        }
-    },
-    created() {
-        const today = new Date().setHours(0, 0, 0, 0);
-        const weddingDate = countDown.setHours(0, 0, 0, 0);
-        this.weddingDay = today >= weddingDate;
-    }
-}
+
+const weddingDay = ref(false);
+
+onMounted(() => {
+    const today = new Date().setHours(0, 0, 0, 0);
+    const weddingDate = countDown.setHours(0, 0, 0, 0);
+    weddingDay.value = today >= weddingDate;
+});
 </script>

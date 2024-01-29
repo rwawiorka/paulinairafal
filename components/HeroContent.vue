@@ -28,7 +28,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import FormatQuote from '~icons/material-symbols/format-quote';
 const { countDown } = useCountDown();
 
@@ -51,5 +51,4 @@ const props = defineProps({
         default: false,
     },
 });
-
 </script>

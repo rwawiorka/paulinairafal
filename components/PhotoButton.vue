@@ -8,7 +8,7 @@
     </UButton>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Camera from '~icons/fluent-emoji-flat/camera';
 import CameraWithFlash from '~icons/fluent-emoji-flat/camera-with-flash';
 import { ref } from 'vue';

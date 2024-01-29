@@ -37,13 +37,10 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, computed } from 'vue';
 
 const { countDown } = useCountDown();
-console.log(countDown);
-let countDownToTime = new Date('2024', '08', '14', '15', '30').getTime();
-// let countDownToTime = countDown.setHours(15, 30).getTime();
 let time = ref({
     days: 0,
     hours: 0,
@@ -62,11 +59,13 @@ const hours = computed(() => time.value.hours);
 const minutes = computed(() => time.value.minutes);
 const seconds = computed(() => time.value.seconds);
 
+let intervalId: number | undefined;
+
 onMounted(startTimer);
 
 function timer() {
     const timeNow = new Date().getTime();
-    const timeDifference = countDownToTime - timeNow;
+    const timeDifference = countDown.getTime() - timeNow;
     const millisecondsInOneSecond = 1000;
     const millisecondsInOneMinute = millisecondsInOneSecond * 60;
     const millisecondsInOneHour = millisecondsInOneMinute * 60;
@@ -79,14 +78,14 @@ function timer() {
     const seconds = Math.floor((timeDifference % millisecondsInOneMinute) / millisecondsInOneSecond);
 
     time.value = { days, hours, minutes, seconds };
+
+    // Clear the interval if the timer has reached zero
+    if (time.value.days <= 0 && time.value.hours <= 0 && time.value.minutes <= 0 && time.value.seconds <= 0) {
+        clearInterval(intervalId);
+    }
 }
 
 function startTimer() {
-    setInterval(() => {
-        timer();
-    }, 1000);
-    if (time.value.days <= 0 && time.value.hours <= 0 && time.value.minutes <= 0 && time.value.seconds <= 0) {
-        clearInterval(timer);
-    }
+    intervalId = setInterval(timer, 1000) as unknown as number;
 }
 </script>
