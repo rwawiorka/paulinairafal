@@ -3,5 +3,6 @@
         <HeroImage />
         <HeroContent />
         <Timer />
+        <Button text="Jak dojechać?" />
     </div>
 </template>

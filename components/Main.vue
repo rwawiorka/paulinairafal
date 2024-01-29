@@ -4,6 +4,7 @@
 </template>
 
 <script>
+const { countDown } = useCountDown();
 export default {
     data() {
         return {
@@ -12,7 +13,7 @@ export default {
     },
     created() {
         const today = new Date().setHours(0, 0, 0, 0);
-        const weddingDate = new Date(2024, 0, 14).setHours(0, 0, 0, 0);
+        const weddingDate = countDown.setHours(0, 0, 0, 0);
         this.weddingDay = today >= weddingDate;
     }
 }
