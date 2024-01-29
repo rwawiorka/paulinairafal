@@ -26,7 +26,7 @@ export default <Partial<Config>>{
           900: '#562d76',
           950: '#391655',
         },
-        "twojastara": {
+        "weddinggray": {
           DEFAULT: '#ffffff',
           50: '#ffffff',
           100: '#ffffff',
