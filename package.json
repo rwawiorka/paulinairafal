@@ -27,6 +27,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@fawmi/vue-google-maps": "0.9.72",
     "firebase": "^10.7.2"
   }
 }
