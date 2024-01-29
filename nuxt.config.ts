@@ -1,12 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  css: [
+    '~/assets/scss/main.scss'
+  ],
   devtools: { enabled: true },
   modules: [
     "@nuxt/ui",
-    "@formkit/auto-animate",
     "@nuxt/image",
     "unplugin-icons/nuxt",
-    // "@nuxt/ui",
     ["@nuxtjs/google-fonts", {
       families: {
         'Alegreya': true,
@@ -16,7 +17,7 @@ export default defineNuxtConfig({
   image: {
     format: ['webp']
   },
-  css: [
-    '~/assets/css/main.css'
-  ],
+  tailwindcss: {
+    configPath: '~/tailwind.config.ts',
+  }
 })
