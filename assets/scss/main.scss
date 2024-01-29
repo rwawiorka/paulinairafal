@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$primary-color: #cfb0ef;
+$shadow: 0px 0px 10px rgba(139, 39, 242, 1);
+
+@font-face {
+  font-family: "Cloud";
+  src: url("../fonts/CloudScript-Regular.otf") format("opentype");
+}
+
+.font {
+  &-alegreya {
+    font-family: "Alegreya", serif;
+  }
+  &-cloud {
+    font-family: "Cloud", sans-serif;
+  }
+}
+
+.wedding {
+  &-primary {
+    &-color {
+      &-text {
+        color: $primary-color !important;
+      }
+      &-background {
+        background-color: $primary-color !important;
+      }
+    }
+  }
+
+  &-text {
+    &-shadow {
+      text-shadow: $shadow;
+    }
+  }
+
+  &-box {
+    &-shadow {
+      box-shadow: $shadow;
+    }
+  }
+}
+
+.all {
+  &-small {
+    &-caps {
+      font-variant: small-caps;
+    }
+  }
+}
