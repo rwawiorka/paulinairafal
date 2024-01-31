@@ -3,7 +3,7 @@
         <HeroImage />
         <HeroContent />
         <Timer />
-        <Button text="Jak dojechać?" />
+        <Button text="Jak dojechać?" hash="#maps" />
     </div>
     <Maps />
 </template>
