@@ -28,4 +28,7 @@ export default defineNuxtConfig({
       GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY
     },
   },
+  plugins: [
+    { src: '~/plugins/router.scrollBehaviour.ts', mode: 'client' },
+  ]
 })
