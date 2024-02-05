@@ -25,10 +25,11 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY
+      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+      GOOGLE_ROUTES_API_KEY: process.env.GOOGLE_ROUTES_API_KEY,
     },
   },
   plugins: [
-    { src: '~/plugins/router.scrollBehaviour.ts', mode: 'client' },
+    { src: '~/plugins/router.scrollBehaviour', mode: 'client' },
   ]
 })
