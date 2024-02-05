@@ -5,7 +5,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(VueGoogleMaps, {
         load: {
             key: config.public.GOOGLE_MAPS_API_KEY,
-            libraries: 'places',
         },
         installComponents: true,
     });

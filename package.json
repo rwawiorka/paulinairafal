@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "0.9.72",
+    "@googlemaps/polyline-codec": "^1.0.28",
     "firebase": "^10.7.2"
   }
 }
