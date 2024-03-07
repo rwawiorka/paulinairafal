@@ -93,10 +93,8 @@ const decodedPolyline = ref<LatLngTuple[]>([]);
 
 onMounted(async () => {
   if (weddingMap.value) {
-    console.log(weddingMap);
     const maps = await weddingMap.value.$mapPromise;
-
-    const {data, pending, error, refresh} = await useFetch('https://routes.googleapis.com/directions/v2:computeRoutes', {
+    await useFetch('https://routes.googleapis.com/directions/v2:computeRoutes', {
       method: 'POST',
       headers,
       body: {
