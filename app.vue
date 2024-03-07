@@ -17,6 +17,9 @@ const onImageLoaded = () => {
   }, 1000);
 };
 
+useHead({
+  title: '14.09.2024 | Paulina i Rafał',
+})
 </script>
 
 <style>
