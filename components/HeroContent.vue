@@ -22,9 +22,7 @@
 
 <script setup lang="ts">
 import FormatQuote from '~icons/material-symbols/format-quote';
-
 const {countDown} = useCountDown();
-
 import {ref} from 'vue';
 
 const heroData = ref({
