@@ -1,12 +1,27 @@
 <template>
-    <NuxtImg class="hero-image h-screen w-screen brightness-75 object-cover" layout="fill" format="" fit="cover"
-        src="/hands.jpg" @load="onImageLoaded" />
+    <div class="parallax w-full h-full bg-fixed bg-center bg-no-repeat bg-cover" 
+         :style="{ backgroundImage: `url(${imgSrc})` }">
+    </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+
+const imgSrc = '/hands.jpg';
+const imageLoaded = ref(false);
+
+onMounted(() => {
+    const img = new Image();
+    img.src = imgSrc;
+    img.onload = () => {
+        imageLoaded.value = true;
+        onImageLoaded();
+    };
+});
+
 const onImageLoaded = () => {
     emit('image-loaded');
-}
+};
 
 const emit = defineEmits(['image-loaded']);
 </script>

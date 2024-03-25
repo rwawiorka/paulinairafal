@@ -1,5 +1,6 @@
 <template>
-    <div class="hero"
+    <Header/>
+    <div class="hero h-screen"
         :class="{ 'opacity-0': isLoading, 'hidden': isLoading, 'opacity-100': !isLoading, 'visible': !isLoading }">
         <HeroImage @image-loaded="onImageLoaded" />
         <HeroContent />
