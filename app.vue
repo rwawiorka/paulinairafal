@@ -19,6 +19,12 @@ const onImageLoaded = () => {
 
 useHead({
   title: '14.09.2024 | Paulina i Rafał',
+  script: [
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-VGQE26GHZL',
+      async: true,
+    }
+  ]
 })
 </script>
 
