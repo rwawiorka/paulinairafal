@@ -31,5 +31,6 @@ export default defineNuxtConfig({
   },
   plugins: [
     { src: '~/plugins/router.scrollBehaviour', mode: 'client' },
-  ]
+  ],
+  ssr: false
 })
