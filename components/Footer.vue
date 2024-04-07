@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full z-10 p-6 pt-6 pb-6 border-t border-opacity-20 border-wedding-50-50 bg-wedding-400" id="main">
+  <footer class="w-full z-10 p-6 pt-6 pb-6 border-t border-opacity-20 border-wedding-50-50 bg-wedding-400" id="footer">
     <div class="container m-auto flex items-center font-cloud" :class="{'justify-center': isMobile, 'justify-between': !isMobile}">
       <h3 class="title inline font text-2xl"><a href="/">Paulina &amp; Rafał</a></h3>
       <Menu v-if="!isMobile"/>
