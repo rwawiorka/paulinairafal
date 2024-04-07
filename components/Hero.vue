@@ -5,9 +5,13 @@
         <HeroImage @image-loaded="onImageLoaded" />
         <HeroContent />
         <Timer />
-        <Button text="Jak dojechać?" hash="#maps" />
     </div>
     <Maps :is-loading="isLoading" />
+    <Welcome />
+    <Timeline />
+    <Service />
+    <Contact />
+    <Footer />
 </template>
 
 <script setup>
