@@ -1,16 +1,19 @@
 <template>
   <ul class="main-menu visible-on-click flex justify-center items-center gap-4 text-lg font-alegreya" id="main-menu">
     <li class="main-menu-item">
-      <a href="/">Strona główna</a>
+      <router-link to="#main">Strona główna</router-link>
     </li>
     <li class="main-menu-item">
-      <a href="#maps">Lokalizacja</a>
+      <router-link to="#maps">Lokalizacja</router-link>
     </li>
     <li class="main-menu-item">
-      <a href="#rvps">Potwierdzenie przybycia</a>
+      <router-link to="#timeline">Plan</router-link>
     </li>
     <li class="main-menu-item">
-      <a href="#gallery">Galeria</a>
+      <router-link to="#service">Nasi usługodawcy</router-link>
+    </li>
+    <li class="main-menu-item">
+      <router-link to="#contact">Kontakt</router-link>
     </li>
   </ul>
 </template>
