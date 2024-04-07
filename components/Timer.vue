@@ -1,8 +1,8 @@
 <template>
-    <div class="top-[calc(75%)] absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+    <div class="top-[calc(75%)] absolute left-1/2 -translate-x-1/2 -translate-y-1/2">
         <ul id="countdown" class="flex justify-center items-center gap-4 text-slate-100">
             <li>
-                <span class="days block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                <span class="days block text-4xl md:text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
                     {{ days < 10 ? '0' + days : days }}
                 </span>
                 <p class="timeRefDays text-xl all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
@@ -10,7 +10,7 @@
                 </p>
             </li>
             <li>
-                <span class="hours block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                <span class="hours block text-4xl md:text-5x font-normal leading-none m-auto mt-0 mb-0 text-center">
                     {{ hours < 10 ? '0' + hours : hours }}
                 </span>
                 <p class="timeRefHours text-xl all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
@@ -18,7 +18,7 @@
                 </p>
             </li>
             <li>
-                <span class="minutes block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                <span class="minutes block text-4xl md:text-5x font-normal leading-none m-auto mt-0 mb-0 text-center">
                     {{ minutes < 10 ? '0' + minutes : minutes }}
                 </span>
                 <p class="timeRefMinutes text-xl all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">
@@ -26,7 +26,7 @@
                 </p>
             </li>
             <li>
-                <span class="seconds block text-5xl font-normal leading-none m-auto mt-0 mb-0 text-center">
+                <span class="seconds block text-4xl md:text-5x font-normal leading-none m-auto mt-0 mb-0 text-center">
                     {{ seconds < 10 ? '0' + seconds : seconds }}
                 </span>
                 <p class="timeRefSeconds text-xl all-small-caps leading-6 m-auto mt-0 mb-0 text-center relative top-0">

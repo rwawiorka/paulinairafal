@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h3 class="text-3xl mb-8">{{ name }}</h3>
+    <h3 class="text-2xl md:text-3xl mb-8">{{ name }}</h3>
     <div class="flex justify-center items-center gap-4">
       <a v-if="fb" :href="fb" target="_blank" rel="noopener noreferrer">
-        <i class="icon-timeline icon-facebook" />
+        <i class="icon-timeline text-4xl md:text-6xl icon-facebook" />
       </a>
       <a v-if="ig" :href="ig" target="_blank" rel="noopener noreferrer">
-        <i class="icon-timeline icon-instagram" />
+        <i class="icon-timeline text-4xl md:text-6xl icon-instagram" />
       </a>
     </div>
   </div>
