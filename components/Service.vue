@@ -1,0 +1,24 @@
+<template>
+  <div id="service" class="w-full relative bg-fixed bg-center bg-no-repeat bg-cover bg-opacity-60" style="height: 30rem;"
+    :style="{ backgroundImage: `url(${imgSrc})` }"">
+    <div class=" backdrop-brightness-50 w-full h-full" />
+    <div
+      class="absolute text-lg w-full h-full flex justify-center items-center flex-col text-white text-center top-0 font-alegreya">
+      <h2 class="text-6xl font-cloud primary-color wedding-text-shadow mb-12">Nasi usługodawcy</h2>
+      <div class="flex justify-center items-center gap-24">
+        <ServiceItem name="Catering Sosenka" fb="https://www.facebook.com/ZaciszePodSosnami/"
+          ig="https://www.instagram.com/zacisze.pod.sosnami/" />
+        <ServiceItem name="Wojciech Kaszlej" fb="https://www.facebook.com/wojciechkaszlejfotografia/"
+          ig="https://www.instagram.com/wojciech_kaszlej_fotografia/" />
+        <ServiceItem name="Zespół Megas" fb="https://www.facebook.com/zespolmegas" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+const imgSrc = '/wrzosy_stol.jpg'
+
+</script>
+
+<style></style>
