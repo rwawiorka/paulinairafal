@@ -15,10 +15,6 @@
 <script lang="ts" setup>
 
 const props = defineProps({
-  icon: {
-    type: Object,
-    default: '',
-  },
   name: {
     type: String,
     default: '',

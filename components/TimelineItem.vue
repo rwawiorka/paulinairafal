@@ -10,9 +10,7 @@
     <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4">
       <svg v-if="isSvg" xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#fd6b9a" class="bi bi-signpost-split"
         viewBox="0 0 16 16">
-        <path
-          d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7h5zm1 3V8H2l-.75 1L2 10h6zm0-5h6l.75-1L14 3H8v2z">
-        </path>
+        <path d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7h5zm1 3V8H2l-.75 1L2 10h6zm0-5h6l.75-1L14 3H8v2z"></path>
       </svg>
       <i v-else class="icon-timeline text-6xl" :class="[icon, { 'flex': !isMobile && reverse, 'justify-end': !isMobile && reverse }]"></i>
       <div class="font-bold text-slate-900 text-2xl" :class="{ 'flex': !isMobile && reverse, 'justify-end': !isMobile && reverse }">{{ title }}

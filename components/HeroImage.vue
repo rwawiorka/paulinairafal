@@ -1,5 +1,5 @@
 <template>
-    <div class="parallax w-full h-full bg-fixed bg-center bg-no-repeat bg-cover" 
+    <div class="parallax w-full h-full bg-fixed bg-center bg-no-repeat bg-cover"
          :style="{ backgroundImage: `url(${imgSrc})` }">
     </div>
 </template>
