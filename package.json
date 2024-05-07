@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host 4000",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -29,6 +29,8 @@
   "dependencies": {
     "@fawmi/vue-google-maps": "0.9.72",
     "@googlemaps/polyline-codec": "^1.0.28",
-    "firebase": "^10.7.2"
+    "firebase": "^10.7.2",
+    "jarallax": "^2.2.1",
+    "object-fit-images": "^3.2.4"
   }
 }

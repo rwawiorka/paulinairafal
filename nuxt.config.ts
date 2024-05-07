@@ -31,6 +31,7 @@ export default defineNuxtConfig({
   },
   plugins: [
     { src: '~/plugins/router.scrollBehaviour', mode: 'client' },
+    { src: '~/plugins/jarallax', ssr: false}
   ],
   ssr: false
 })

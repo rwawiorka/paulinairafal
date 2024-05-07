@@ -1,6 +1,6 @@
 <template>
-  <div id="service" class="parallax w-full relative bg-fixed bg-center bg-no-repeat bg-cover bg-opacity-60 h-[calc(50rem)] md:h-[calc(30rem)]"
-    :style="{ backgroundImage: `url(${imgSrc})` }">
+  <div id="service" class="parallax w-full relative jarallax bg-center bg-no-repeat bg-cover bg-opacity-60 h-[calc(50rem)] md:h-[calc(30rem)]">
+    <img class="jarallax-img" :src="imgSrc" alt="Service background" />
     <div class="backdrop-brightness-50 w-full h-full" />
     <div
       class="absolute text-lg w-full h-full flex justify-center items-center flex-col text-white text-center top-0 font-alegreya p-6">
