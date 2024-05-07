@@ -1,5 +1,5 @@
 <template>
-  <div id="service" class="w-full relative bg-fixed bg-center bg-no-repeat bg-cover bg-opacity-60 h-[calc(50rem)] md:h-[calc(30rem)]"
+  <div id="service" class="parallax w-full relative bg-fixed bg-center bg-no-repeat bg-cover bg-opacity-60 h-[calc(50rem)] md:h-[calc(30rem)]"
     :style="{ backgroundImage: `url(${imgSrc})` }">
     <div class="backdrop-brightness-50 w-full h-full" />
     <div

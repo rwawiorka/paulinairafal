@@ -18,7 +18,7 @@
       <time v-if="time" class="font-caveat font-medium text-slate-900 text-2xl"
         :class="{ 'flex': !isMobile && reverse, 'justify-end': !isMobile && reverse }">{{ time }}</time>
       <div v-if="location" class="text-slate-500 text-xl" :class="{ 'flex': !isMobile && reverse, 'justify-end': !isMobile && reverse }">{{
-      location }}</div>
+      location }}<br/>{{ address }}</div>
     </div>
   </div>
 </template>
@@ -58,6 +58,10 @@ const props = defineProps({
     default: '',
   },
   location: {
+    type: String,
+    default: '',
+  },
+  address: {
     type: String,
     default: '',
   },
