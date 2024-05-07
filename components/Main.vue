@@ -13,8 +13,4 @@ const props = defineProps({
 });
 </script>
 <style>
-.parallax {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-}
 </style>
