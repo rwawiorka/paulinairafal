@@ -10,7 +10,7 @@ import { jarallax } from 'jarallax';
 import 'jarallax/dist/jarallax.min.css';
 
 
-const imgSrc = '/hands.jpg';
+const imgSrc = '/hands.png';
 const imageLoaded = ref(false);
 
 onMounted(() => {
