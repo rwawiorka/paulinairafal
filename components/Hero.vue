@@ -9,6 +9,7 @@
     <Maps :is-loading="isLoading" />
     <Welcome />
     <Timeline />
+    <MenuEats />
     <Service />
     <Contact />
     <Footer />
