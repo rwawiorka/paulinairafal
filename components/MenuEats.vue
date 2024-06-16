@@ -1,9 +1,9 @@
 <template>
   <div id="menueats"
        :style="{ backgroundImage: `url(${imgSrc})` }"
-       class="md:p-16 p-6 flex flex-col relative justify-center items-center "
+       class="md:p-16 p-6 flex flex-col relative justify-center items-center bg-cover"
   >
-    <h3 class="text-4xl md:text-6xl font-cloud primary-color wedding-text-shadow mb-12 text-center">Menu weselne</h3>
+    <h3 class="md:text-6xl text-4xl font-cloud text-wedding-800 wedding-text-shadow mb-12 text-center">Menu weselne</h3>
     <div class="flex flex-col md:gap-16">
       <MenuCard name="Zupy" :dish="soups"/>
       <MenuCard name="Danie główne" :dish="mainCourses"/>
@@ -11,6 +11,7 @@
       <MenuCard name="Tort" :dish="tort"/>
       <MenuCard name="Trzecie danie" :dish="thirdCourses"/>
       <MenuCard name="Czwarte danie" :dish="fourthCourses"/>
+      <MenuCard name="Przystawki" :dish="appetizers"/>
     </div>
   </div>
 </template>
@@ -42,7 +43,7 @@ const tort = [
 ]
 
 const thirdCourses = [
-    'De\'volay z serem',
+    'Devolay z serem',
     'Babka ziemniaczana z sosem grzybowym',
     'Sałata ze śmietaną',
 ]
