@@ -9,8 +9,8 @@
     <Maps :is-loading="isLoading" />
     <Welcome />
     <Timeline />
-    <MenuEats />
     <Service />
+    <MenuEats />
     <Contact />
     <Footer />
 </template>
