@@ -20,48 +20,48 @@
         <h3 class="md:text-5xl text-4xl font-cloud text-wedding-800 xl:mt-12 mt-6 wedding-text-shadow text-center">lub
           skorzystaj z formularza</h3>
         <div class="flex justify-center items-center text-wedding-800 flex-col xl:flex-row xl:gap-8 gap-4 w-full">
-          <form class="max-w-md mx-auto w-full xl:w-1/2" @submit.prevent="sendMail">
+          <form ref="form" class="max-w-md mx-auto w-full xl:w-1/2" @submit.prevent="sendEmail">
             <div class="relative z-0 w-full mb-5 group">
               <input id="floating_email"
                      v-model="name"
                      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-wedding-300 focus:outline-none focus:ring-0 focus:border-wedding-600 peer"
-                     name="floating_email"
+                     name="user_name"
                      placeholder="" required type="text"/>
               <label
                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-wedding-300 peer-focus:dark:text-wedding-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  for="floating_email">Imię
+                  for="user_name">Imię
                 i nazwisko</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-              <input id="floating_password"
+              <input id="email"
                      v-model="email"
                      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-wedding-300 focus:outline-none focus:ring-0 focus:border-wedding-600 peer"
-                     name="floating_password"
+                     name="user_email"
                      placeholder=" " required type="email"/>
               <label
                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-wedding-300 peer-focus:dark:text-wedding-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  for="floating_password">Adres
+                  for="user_email">Adres
                 e-mail</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
               <input id="floating_repeat_password"
                      v-model="guests"
                      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-wedding-300 focus:outline-none focus:ring-0 focus:border-wedding-600 peer"
-                     name="repeat_password"
+                     name="guests"
                      placeholder=" " required type="text"/>
               <label
                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-wedding-300 peer-focus:dark:text-wedding-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  for="floating_repeat_password">Liczba
+                  for="guests">Liczba
                 gości</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
                 <textarea id="floating_first_name" v-model="textArea"
                           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-wedding-300 focus:outline-none focus:ring-0 focus:border-wedding-600 peer"
-                          name="floating_first_name"
-                          placeholder=" " required rows="4"></textarea>
+                          name="message"
+                          placeholder="" required rows="4"></textarea>
               <label
                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-wedding-300 peer-focus:dark:text-wedding-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  for="floating_first_name">Wiadomość</label>
+                  for="message">Podaj imiona i nazwiska gości</label>
             </div>
             <div class="flex justify-center items-center w-full">
               <button
@@ -71,7 +71,6 @@
               </button>
             </div>
           </form>
-
         </div>
       </div>
     </div>
@@ -79,33 +78,26 @@
 </template>
 
 <script setup>
+import {ref} from 'vue';
+import emailjs from '@emailjs/browser';
+
+const form = ref(null);
+
 const imgSrc = '/form.png';
 
-import {ref} from 'vue';
-import sgMail from '@sendgrid/mail';
-
-const name = ref('');
-const email = ref('');
-const guests = ref('');
-const textArea = ref('');
-
-const sendMail = async (event) => {
-  event.preventDefault();
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-  const msg = {
-    to: 'rafal.wawiorka@gmail.com',
-    from: 'rafal.wawiorka@gmail.com',
-    subject: `Potwierdzenie obecności od ${name.value}`,
-    text: `Imię i nazwisko: ${name.value}\nEmail: ${email.value}\nLiczba gości: ${guests.value}\nWiadomość: ${textArea.value}`,
-  };
-
-  try {
-    await sgMail.send(msg);
-    alert('Email sent successfully!');
-  } catch (error) {
-    console.error('Error sending email:', error);
-    alert('Error sending email.');
-  }
+const sendEmail = () => {
+  const config = useRuntimeConfig();
+  emailjs
+      .sendForm(config.public.EMAIL_SERVICE_ID, config.public.EMAIL_TEMPLATE_ID, form.value, {
+        publicKey: config.public.EMAIL_PUBLIC_KEY,
+      })
+      .then(
+          () => {
+            alert('Dziękujemy za potwierdzenie przybycia!');
+          },
+          (error) => {
+            alert('Coś poszło nie tak :( Spróbuj ponownie');
+          }
+      );
 };
 </script>

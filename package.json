@@ -27,6 +27,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@fawmi/vue-google-maps": "0.9.72",
     "@googlemaps/polyline-codec": "^1.0.28",
     "@sendgrid/mail": "^8.1.3",
